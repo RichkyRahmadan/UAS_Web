@@ -1,0 +1,168 @@
+main {
+    /* Aturan dasar area konten utama */
+    padding: 2rem 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.pageHeader {
+    /* Judul di atas halaman kontak */
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pageHeader h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.pageHeader p {
+    font-size: 1.1rem;
+    color: #9ca3af;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contactWrapper {
+    /* Wadah utama yang ngebungkus form dan info kontak */
+    display: flex;
+    /* Bikin form dan info jadi sebelahan */
+    flex-wrap: wrap;
+    /* Kalau layar kekecilan, dia bakal turun ke bawah */
+    gap: 3rem;
+    /* Jarak antara form dan info */
+    background-color: rgba(31, 41, 55, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: clamp(1.5rem, 5vw, 3rem);
+}
+
+.contactForm {
+    /* Bagian formulir kontak, ngambil porsi lebih besar */
+    flex: 2;
+    min-width: 300px;
+    /* Lebar minimum sebelum turun ke bawah */
+}
+
+.contactInfo {
+    /* Bagian info kontak */
+    flex: 1;
+    min-width: 300px;
+}
+
+.formGroup {
+    /* Grup yang isinya label dan input (cth: Nama dan kotaknya) */
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    /* Teks label (cth: 'Nama Anda') */
+    display: block;
+    /* Biar inputnya ada di bawah label */
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #d1d5db;
+}
+
+.formGroup input,
+.formGroup textarea {
+    /* Kotak input dan area teks */
+    width: 100%;
+    /* Lebarnya penuhi wadah */
+    background-color: rgba(55, 65, 81, 0.7);
+    border: 1px solid #4b5563;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: inherit;
+    /* Pakai font yang sama kayak body */
+    transition: border-color 0.2s, box-shadow 0.2s;
+    /* Animasi pas di-klik */
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    /* Efek pas kotak input di-klik */
+    outline: none;
+    /* Hapus outline bawaan browser */
+    border-color: #3b82f6;
+    /* Ganti warna border jadi biru */
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+    /* Kasih bayangan biru */
+}
+
+.submitButton {
+    /* Tombol 'Kirim' */
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.submitButton:hover {
+    /* Efek pas kursor di atas tombol kirim */
+    background-color: #1d4ed8;
+    transform: scale(1.02);
+    /* Tombolnya membesar sedikit */
+}
+
+.infoTitle {
+    /* Judul di bagian info kontak */
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contactInfo p {
+    color: #d1d5db;
+    margin-bottom: 2rem;
+}
+
+.infoList {
+    /* Daftar info (alamat, email, dll) */
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.infoList li {
+    /* Tiap item di daftar info */
+    display: flex;
+    align-items: center;
+    /* Ikon dan teks sejajar */
+    gap: 1rem;
+    /* Jarak antara ikon dan teks */
+}
+
+.infoList li img {
+    /* Ukuran gambar ikon */
+    width: 1.75rem;
+}
+
+.infoList .material-symbols-outlined {
+    /* Ngatur ikon dari Google Fonts */
+    color: #3b82f6;
+    font-size: 1.75rem;
+}
+
+/* Untuk Beberapa Device kecil seperti Iphone 5 */
+@media (max-width : 375px) {
+    .contactForm{
+        min-width: 240px;
+    }
+    .contactInfo {
+        min-width: 240px;
+    }
+}

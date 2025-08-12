@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tachyon</title>
+    <link rel="icon" href="assets/icons/thermostat.png">
+    <!-- link untuk css -->
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/weather.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- link untuk font inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Segoe+UI&display=swap" rel="stylesheet">
+    <!-- link untuk google icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <!-- hal yang ada di header -->
+    <header>
+        <div class="logoContainer">
+            <span class="material-symbols-outlined logoIcon">thermostat</span>
+            <p class="logoText"><a href="index.html">Tachyon</a></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Cuaca</a></li>
+                <li><a href="html/about.html">Tentang</a></li>
+                <li><a href="html/contact.html">Kontak Saya</a></li>
+                </ul>
+        </nav>
+        <!-- untuk burger menu -->
+        <div class="menuToggle">
+            <input type="checkbox" >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <!-- container konten halaman -->
+    <div class="appWrapper">
+        <main>
+            <!-- container untuk detail cuaca pada daerah yang dipilih -->
+            <div id="weatherApp">
+                <!-- container untuk searchbar -->
+                <div class="searchContainer">
+                    <input type="text" id="cityInput" placeholder="Cari nama daerah...">
+                    <button id="searchButton" aria-label="Cari">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </div>
+                <!-- container untuk loader -->
+                <div id="loader" class="loaderContainer">
+                    <div class="spinner"></div>
+                    <p class="message">Memuat data cuaca...</p>
+                </div>
+                <!-- container untuk pesan error -->
+                <div id="errorMessage" class="errorContainer">
+                    <span class="material-symbols-outlined errorIcon">error</span>
+                    <p class="message" id="errorText">Kota tidak ditemukan.</p>
+                </div>
+                <div id="weatherContent">
+                    <!-- container untuk detail cuaca pada lokasi yang ditentukan pada waktu yang dipilih -->
+                    <div class="mainInfoWrapper">
+                        <div class="currentWeatherDisplay">
+                            <h1 id="cityName">--</h1>
+                            <p id="currentDate" class="currentDate"></p>
+                            <p id="currentWeatherDesc">--</p>
+                            <div class="tempDisplay">
+                                <div id="currentWeatherIcon"></div>
+                                <p id="currentTemp">--°</p>
+                            </div>
+                        </div>
+                        <div class="detailsGrid">
+                            <div class="detailCard">
+                                <p class="label">Terasa Seperti</p>
+                                <p id="apparentTemp" class="value">--°</p>
+                            </div>
+                            <div class="detailCard">
+                                <p class="label">Kelembapan</p>
+                                <p id="humidity" class="value">--%</p>
+                            </div>
+                            <div class="detailCard">
+                                <p class="label">Kecepatan Angin</p>
+                                <p id="windSpeed" class="value">-- km/j</p>
+                            </div>
+                            <div class="detailCard">
+                                <p class="label">Suhu Maks/min</p>
+                                <p id="maxMinTemp" class="value">--°/--°</p>
+                            </div>
+                            <div class="detailCard">
+                                <p class="label">Matahari Terbit</p>
+                                <p id="sunriseTime" class="value">--:--</p>
+                            </div>
+                            <div class="detailCard">
+                                <p class="label">Matahari Terbenam</p>
+                                <p id="sunsetTime" class="value">--:--</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- container untuk card cuaca per jam -->
+                    <h2 class="sectionTitle">Ramalan Per Jam</h2>
+                    <div class="hourlyForecastContainer">
+                        <div id="hourlyForecast"></div>
+                    </div>
+                    <!-- container untuk card cuaca per hari -->
+                    <h2 class="sectionTitle">Ramalan 7 Hari</h2>
+                    <div id="dailyForecast"></div>
+                </div>
+            </div>
+        </main>
+        <!-- container untuk cuaca dikota kota besar -->
+        <aside id="worldWeatherContainer">
+            <h2 class="sectionTitle">Cuaca Dunia</h2>
+            <div id="worldWeatherHighlights"></div>
+        </aside>
+    </div>
+    <!-- footer ya gitulah -->
+    <footer>
+        <p>&copy;2025 Tachyon. Seluruh hak cipta dilindungi.</p>
+        <span class="botNav">
+            <a href="index.html" class="active">Cuaca</a> |
+            <a href="html/about.html">Tentang</a> |
+            <a href="html/contact.html">Kontak saya</a>
+        </span>
+    </footer>
+    <script src="js/api-weather.js"></script>
+    <script src="js/header.js"></script>
+</body>
+</html>

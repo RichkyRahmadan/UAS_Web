@@ -1,0 +1,30 @@
+footer {
+    /* Ngatur latar belakang, jarak atas, dan perataan teks di footer */
+    background-color: rgba(17, 24, 39, 0.8);
+    margin-top: 5vh;
+    border-top: 2px solid;
+    text-align: center;
+    line-height: 2;
+    /* Jarak antar baris */
+    padding: 1rem;
+}
+
+.botNav a {
+    /* Ngatur link di navigasi footer */
+    text-decoration: none;
+    /* Hapus garis bawah */
+    color: #d1d5db;
+    /* Warna abu-abu */
+}
+
+.botNav a:hover {
+    /* Ganti warna pas kursor di atas link */
+    color: #ffffff;
+}
+
+.botNav a.active {
+    /* Nandain link halaman yang lagi aktif */
+    color: #ffffff;
+    border-bottom: 2px solid #3b82f6;
+    /* Kasih garis bawah biru */
+}

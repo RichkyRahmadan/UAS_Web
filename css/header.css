@@ -1,0 +1,225 @@
+/* ===== PENGATURAN GLOBAL & DASAR ===== */
+
+* {
+    /* Hapus semua margin & padding bawaan browser */
+    margin: 0;
+    padding: 0;
+    /* Ubah cara ngitung ukuran box, biar lebih gampang ngatur layout */
+    box-sizing: border-box;
+}
+
+html {
+    /* Atur ukuran font dasar biar konsisten */
+    font-size: 16px;
+}
+
+html,
+body {
+    /* Pastiin lebar halaman penuh dan gak ada scroll horizontal aneh */
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    /* Atur font utama, warna teks, dan latar belakang buat seluruh halaman */
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #ffffff;
+    /* Warna teks putih */
+    background-color: #111827;
+    /* Warna latar belakang biru gelap */
+}
+
+body::-webkit-scrollbar {
+    /* Sembunyiin scrollbar di browser Chrome/Safari biar keliatan bersih */
+    display: none;
+}
+
+
+/* ===== STYLING HEADER ===== */
+
+header {
+    /* Pakai flexbox buat ngatur item di header (logo & nav) biar sejajar */
+    display: flex;
+    justify-content: space-between;
+    /* Logo di kiri, nav di kanan */
+    align-items: center;
+    /* Posisinya di tengah secara vertikal */
+    padding: 1rem 5%;
+    /* Kasih jarak di dalam header */
+    background-color: rgba(17, 24, 39, 0.8);
+    /* Warna header semi-transparan */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Garis tipis di bawah header */
+    position: sticky;
+    /* Bikin header nempel di atas pas di-scroll */
+    top: 0;
+    z-index: 10;
+    /* Pastiin header selalu di lapisan paling atas */
+}
+
+.logoContainer {
+    /* Ngatur wadah logo */
+    display: flex;
+    align-items: center;
+    /* Ikon dan teks logo sejajar di tengah */
+    gap: 0.75rem;
+    /* Jarak antara ikon dan teks */
+    font-size: 1.25rem;
+    /* Ukuran teks logo */
+    font-weight: 600;
+    /* Teksnya agak tebal */
+}
+
+.logoIcon {
+    /* Ngatur ikon di logo */
+    font-size: 1.75rem;
+    color: #3b82f6;
+    /* Warna ikon biru */
+}
+
+.logoText a {
+    /* Ngatur link di teks logo */
+    color: #ffffff;
+    /* Warna teks putih */
+    text-decoration: none;
+    /* Hapus garis bawah */
+}
+
+
+/* ===== STYLING NAVIGASI ===== */
+
+nav ul {
+    /* Ngatur daftar menu */
+    display: flex;
+    flex-direction: row;
+    /* Menu berjajar ke samping */
+    gap: 2rem;
+    /* Jarak antar menu */
+    list-style: none;
+    /* Hapus buletan/angka dari list */
+}
+
+nav ul li a {
+    /* Ngatur link di setiap menu */
+    color: #d1d5db;
+    /* Warna abu-abu terang */
+    text-decoration: none;
+    /* Hapus garis bawah */
+    font-weight: 500;
+    /* Ketebalan teks normal */
+    font-size: 1rem;
+    transition: color 0.3s;
+    /* Efek transisi warna pas disentuh mouse */
+    padding: 0.5rem 0;
+}
+
+nav ul li a:hover {
+    /* Efek pas kursor mouse di atas link */
+    color: #ffffff;
+    /* Warnanya jadi putih */
+}
+
+nav ul li a.active {
+    /* Nandain menu yang lagi aktif/terbuka */
+    color: #ffffff;
+    /* Warna jadi putih */
+    border-bottom: 2px solid #3b82f6;
+    /* Ada garis biru di bawahnya */
+}
+
+
+/* ===== MENU BURGER UNTUK MOBILE ===== */
+
+.menuToggle {
+    /* Wadah buat ikon burger (tiga garis) */
+    display: none;
+    /* Sembunyiin di layar besar */
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    /* Ngatur jarak antar garis */
+    position: relative;
+    z-index: 999;
+}
+
+.menuToggle input {
+    /* Checkbox gaib buat ngontrol menu */
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    /* Bikin gak keliatan */
+    cursor: pointer;
+    /* Kursor jadi tangan pas diarahin */
+    z-index: 2;
+    /* Posisinya di atas garis */
+}
+
+.menuToggle span {
+    /* Tiga garis si burger */
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    transition: all 0.5s;
+    /* Animasi pas berubah jadi 'X' */
+}
+
+
+/* ===== RESPONSIVE DESIGN (TAMPILAN MOBILE) ===== */
+
+@media (max-width: 767px) {
+
+    /* Aturan ini cuma berlaku buat layar kecil (HP) */
+    .menuToggle {
+        display: flex;
+        /* Tunjukin ikon burger-nya */
+    }
+
+    header nav {
+        /* Posisikan navigasi di luar layar sebelah kanan */
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50vw;
+        /* Lebarnya setengah layar */
+        height: 70vh;
+        /* Tingginya 70% layar */
+        background-color: #111827;
+        z-index: 998;
+        transform: translateX(100%);
+        /* Geser 100% ke kanan (sembunyi) */
+        transition: all 1s;
+        /* Animasi pas muncul/hilang */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    header nav.slide {
+        /* Kalau ada class 'slide', geser navigasi ke posisi semula (muncul) */
+        transform: translateX(0%);
+    }
+
+    header nav ul {
+        /* Ubah menu jadi ke bawah di tampilan mobile */
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+    }
+
+    /* Animasi buat ngubah ikon burger jadi 'X' pas di-klik */
+    .menuToggle input:checked~span:nth-child(2) {
+        transform: rotate(45deg) translate(-1px, -1px);
+    }
+
+    .menuToggle input:checked~span:nth-child(4) {
+        transform: rotate(-45deg) translate(0, 0);
+    }
+
+    .menuToggle input:checked~span:nth-child(3) {
+        transform: scale(0);
+        opacity: 0;
+    }
+}

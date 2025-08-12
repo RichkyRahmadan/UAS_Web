@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tachyon</title>
+        <link rel="icon" href="../assets/icons/thermostat.png">
+        <!-- link untuk css -->
+        <link rel="stylesheet" href="../css/header.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/about.css">
+        <!-- link untuk google font inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Segoe+UI&display=swap" rel="stylesheet">
+        <!-- link untuk google icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <!-- hal yang ada pada header -->
+    <header>
+        <div class="logoContainer">
+            <span class="material-symbols-outlined logoIcon">thermostat</span>
+            <p class="logoText"><a href="index.html">Tachyon</a></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Cuaca</a></li>
+                <li><a href="about.html" class="active">Tentang</a></li>
+                <li><a href="contact.html">Kontak Saya</a></li>
+                </ul>
+        </nav>
+        <!-- untuk menu burger -->
+        <div class="menuToggle">
+            <input type="checkbox" >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <!-- container untuk tentang -->
+        <section class="hero">
+            <h1>Tentang Proyek Ini</h1>
+            <p class="subtitle">Sebuah aplikasi web untuk menyajikan data cuaca dan geofisika yang cepat, akurat, dan mudah diakses. Penamaan Tachyon pada web ini dikarenakan Tachyon merupakan partikel hipotesis yang bergerak lebih cepat dari cahaya yang menggambarkan kecepatan website ini dalam mendapatkan data cuaca yang akurat.</p>
+        </section>
+
+        <!-- container untuk misi -->
+        <section class="contentSection">
+            <h2 class="sectionTitle">Misi Proyek</h2>
+            <p>Misi utama dari aplikasi ini adalah untuk menyediakan platform terpusat yang memungkinkan pengguna memantau kondisi cuaca lokal secara detail dari sumber data yang tepercaya. Proyek ini dibangun dengan fokus pada performa, aksesibilitas, dan pengalaman pengguna yang bersih di semua perangkat.</p>
+        </section>
+
+        <!-- container untuk penggunaan teknologi -->
+        <section class="contentSection">
+            <h2 class="sectionTitle">Teknologi yang Digunakan</h2>
+            <div class="techGrid">
+                <div class="techCard">
+                    <span class="material-symbols-outlined">html</span>
+                    <h3>HTML5</h3>
+                    <p>Digunakan untuk membangun struktur halaman yang semantik dan aksesibel.</p>
+                </div>
+                <div class="techCard">
+                    <span class="material-symbols-outlined">css</span>
+                    <h3>CSS3</h3>
+                    <p>Memberikan gaya visual pada halaman web yang meningkatkan pengalaman pengguna.</p>
+                </div>
+                <div class="techCard">
+                    <span class="material-symbols-outlined">javascript</span>
+                    <h3>JavaScript (ES6+)</h3>
+                    <p>Menjadi otak dari aplikasi, menangani logika, interaksi pengguna, dan komunikasi dengan API.</p>
+                </div>
+            </div>
+        </section>
+        <!-- container untuk sumber data -->
+        <section class="contentSection">
+            <h2 class="sectionTitle">Sumber Data</h2>
+            <p>Akurasi data adalah prioritas utama. Aplikasi ini mengandalkan API publik yang kredibel dan tepercaya:</p>
+            <ul class="dataSourceList">
+                <li><strong>Prakiraan Cuaca:</strong> Data disediakan oleh <a href="https://open-meteo.com/" target="_blank">Open-Meteo</a>, sebuah layanan data cuaca global yang bersifat open-source.</li>
+            </ul>
+        </section>
+    <footer>
+            <p>&copy;2025 Tachyon. Seluruh hak cipta dilindungi.</p>
+            <span class="botNav">
+                <a href="../index.html"">Cuaca</a> |
+                <a href="about.html" class="active">Tentang</a> |
+                <a href="contact.html">Kontak saya</a>
+            </span>
+    </footer>
+    <script src="../js/header.js"></script>
+</body>
+</html>
